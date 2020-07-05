@@ -1,30 +1,9 @@
 class RecipeController < ApplicationController
-    before_action :set_recipe, only: [:show, :update, :destroy]
+    # before_action :set_recipe, only: [:show, :update, :destroy]
 
     def index 
-        data = [
-            {
-              name: "Chocolate cake",
-              cooking_time: "2 hours",
-              method: [
-                'Mix all the ingredients together',
-                'Add the egg',
-                'Put in the oven'
-              ],
-              ingredients: [
-                'egg',
-                'sugar',
-                'butter'
-              ]
-            },
-            {
-              name: "Pumpkin soup",
-              cooking_time: "30 mins",
-              method: [],
-            ingredients: []
-            }
-          ]
-          render json: data
+      data = Recipe.all
+      render json: data
     end 
   
     # def show 
